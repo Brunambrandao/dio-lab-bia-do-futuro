@@ -91,8 +91,5 @@ REGRAS DE OURO (ANTI-ALUCINAÇÃO):
 ---
 
 ## Observações e Aprendizados
-
-> Registre aqui ajustes que você fez nos prompts e por quê.
-
 - Ajuste 1: Adicionada a instrução explícita de "Não usar conhecimento externo" para evitar que a IA cite taxas de juros que ela aprendeu no treinamento, mas que não estão no arquivo produtos_financeiros.json.
 - Ajuste 2: Incluída a necessidade de calcular o saldo residual antes de responder, garantindo que a Atena sempre fale números reais baseados no transacoes.csv.
