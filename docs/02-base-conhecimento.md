@@ -41,31 +41,21 @@ Utilizaremos a técnica de Dynamic Context Injection (Injeção Dinâmica de Con
 
 Para garantir que não haja alucinação, o contexto será enviado assim para o modelo:
 
+```
 CONTEXTO ATUAL DO CLIENTE:
+- Nome: João Silva
+- Perfil: Moderado
+- Metas: Completar reserva (R$ 15k) e Entrada apto (R$ 50k)
+- Saldo Calculado: R$ 2.461,10 (Baseado em transacoes.csv)
 
-- Cliente: João Silva, 32 anos (Analista de Sistemas).
+PRODUTOS COMPATÍVEIS:
+- CDB Liquidez Diária: Risco Baixo, 102% do CDI
+- Fundo Multimercado: Risco Médio, CDI + 2%
 
-- Perfil: Moderado.
-
-- Meta Ativa: Entrada do apartamento (R$ 50.000,00 até 12/2027).
-
-- Resumo Financeiro Mensal: Receita de R$ 5.000,00 vs. Despesas de R$ 2.538,90.
-
-- Saldo Disponível para Estratégia: R$ 2.461,10.
-
+HISTÓRICO:
+- 25/10/2025: Atualização cadastral via email
 ```
-PRODUTOS COMPATÍVEIS (Base de Conhecimento):
+---
+## Nota de Segurança (Anti-Alucinação):
 
-CDB Liquidez Diária (Renda Fixa, Risco Baixo, 102% do CDI).
-
-Fundo Multimercado (Fundo, Risco Médio, CDI + 2%).
-
-HISTÓRICO RECENTE:
-
-O cliente atualizou o cadastro em 25/10/2025 via e-mail.
-
-## Checklist de Segurança (Anti-Alucinação)
-Filtro de Perfil: Se o João pedir para investir no "Fundo de Ações" (Risco Alto), a Atena verificará no JSON que aceita_risco é false e negará a sugestão, explicando o motivo técnico.
-
-Dados Concretos: A Atena nunca dirá que o João tem "muito dinheiro", ela dirá "Com base no seu saldo de R$ 2.461,10...".
-```
+O sistema de filtragem impede que produtos de "Risco Alto" (como o Fundo de Ações) sejam injetados no contexto acima, pois o campo aceita_risco do cliente é false.
