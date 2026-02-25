@@ -15,7 +15,7 @@
 
 > Você modificou ou expandiu os dados mockados? 
 
-Cálculo de Saldo Residual: A Atena não lerá apenas os dados estáticos, ela somará as entradas e subtrairá as saídas do transacoes.csv para dizer ao João exatamente quanto "sobrou" para investir no mês.
+A Atena não lerá apenas os dados estáticos, ela somará as entradas e subtrairá as saídas do transacoes.csv para dizer ao João exatamente quanto "sobrou" para investir no mês.
 
 ---
 
