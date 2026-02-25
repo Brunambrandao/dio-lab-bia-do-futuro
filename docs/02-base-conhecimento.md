@@ -2,54 +2,70 @@
 
 ## Dados Utilizados
 
-Descreva se usou os arquivos da pasta `data`, por exemplo:
-
 | Arquivo | Formato | Utilização no Agente |
 |---------|---------|---------------------|
-| `historico_atendimento.csv` | CSV | Contextualizar interações anteriores |
-| `perfil_investidor.json` | JSON | Personalizar recomendações |
-| `produtos_financeiros.json` | JSON | Sugerir produtos adequados ao perfil |
-| `transacoes.csv` | CSV | Analisar padrão de gastos do cliente |
-
-> [!TIP]
-> **Quer um dataset mais robusto?** Você pode utilizar datasets públicos do [Hugging Face](https://huggingface.co/datasets) relacionados a finanças, desde que sejam adequados ao contexto do desafio.
+| `historico_atendimento.csv` | CSV | Evitar repetição de explicações (ex: Atena sabe que o João já perguntou sobre CDB em 15/09). |
+| `perfil_investidor.json` | JSON | Identificar que o João é "Moderado" e tem como meta a "Entrada do Apartamento". |
+| `produtos_financeiros.json` | JSON | Filtrar apenas produtos que se encaixam no perfil "Moderado" ou "Baixo" do João. |
+| `transacoes.csv` | CSV | Calcular o saldo real e identificar que o Salário (R$ 5.000) já caiu na conta. |
 
 ---
 
 ## Adaptações nos Dados
 
-> Você modificou ou expandiu os dados mockados? Descreva aqui.
+> Você modificou ou expandiu os dados mockados? 
 
-[Sua descrição aqui]
+Cálculo de Saldo Residual: A Atena não lerá apenas os dados estáticos, ela somará as entradas e subtrairá as saídas do transacoes.csv para dizer ao João exatamente quanto "sobrou" para investir no mês.
 
 ---
 
 ## Estratégia de Integração
 
 ### Como os dados são carregados?
-> Descreva como seu agente acessa a base de conhecimento.
 
-[ex: Os JSON/CSV são carregados no início da sessão e incluídos no contexto do prompt]
+Os arquivos são carregados via biblioteca Pandas no Python assim que a aplicação Streamlit inicia. Eles ficam armazenados em dataframes na memória da sessão.
 
 ### Como os dados são usados no prompt?
-> Os dados vão no system prompt? São consultados dinamicamente?
 
-[Sua descrição aqui]
+Utilizaremos a técnica de Dynamic Context Injection (Injeção Dinâmica de Contexto). Em vez de jogar todo o banco de dados no prompt (o que seria caro e confuso), a Atena:
+
+1- Identifica a intenção do usuário.
+
+2-  Filtra apenas as linhas relevantes (ex: se o usuário quer investir, ela puxa apenas o perfil_investidor.json e os produtos compatíveis do produtos_financeiros.json).
+
+3- Insere esses dados formatados como texto no System Prompt.
 
 ---
 
 ## Exemplo de Contexto Montado
 
-> Mostre um exemplo de como os dados são formatados para o agente.
+Para garantir que não haja alucinação, o contexto será enviado assim para o modelo:
+
+CONTEXTO ATUAL DO CLIENTE:
+
+- Cliente: João Silva, 32 anos (Analista de Sistemas).
+
+- Perfil: Moderado.
+
+- Meta Ativa: Entrada do apartamento (R$ 50.000,00 até 12/2027).
+
+- Resumo Financeiro Mensal: Receita de R$ 5.000,00 vs. Despesas de R$ 2.538,90.
+
+- Saldo Disponível para Estratégia: R$ 2.461,10.
 
 ```
-Dados do Cliente:
-- Nome: João Silva
-- Perfil: Moderado
-- Saldo disponível: R$ 5.000
+PRODUTOS COMPATÍVEIS (Base de Conhecimento):
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-...
+CDB Liquidez Diária (Renda Fixa, Risco Baixo, 102% do CDI).
+
+Fundo Multimercado (Fundo, Risco Médio, CDI + 2%).
+
+HISTÓRICO RECENTE:
+
+O cliente atualizou o cadastro em 25/10/2025 via e-mail.
+
+## Checklist de Segurança (Anti-Alucinação)
+Filtro de Perfil: Se o João pedir para investir no "Fundo de Ações" (Risco Alto), a Atena verificará no JSON que aceita_risco é false e negará a sugestão, explicando o motivo técnico.
+
+Dados Concretos: A Atena nunca dirá que o João tem "muito dinheiro", ela dirá "Com base no seu saldo de R$ 2.461,10...".
 ```
