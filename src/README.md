@@ -12,12 +12,13 @@ src/
 └── requirements.txt    # Dependências
 ```
 
-## Exemplo de requirements.txt
+## Requirements.txt
 
 ```
 streamlit
-openai
+google-generativeai
 python-dotenv
+pandas
 ```
 
 ## Como Rodar
