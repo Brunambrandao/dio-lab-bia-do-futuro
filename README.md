@@ -57,3 +57,12 @@ O projeto resolve a dificuldade de interpretação de dados financeiros complexo
 ```
 
 ---
+
+## 👩‍💻 Autora
+**[Bruna Medeiros Brandão]**
+Projeto realizado como parte do **Bootcamp de Análise de Dados da [DIO.me](https://www.dio.me/)**.
+
+---
+
+⭐ Se você gostou deste projeto, deixe uma estrela no repositório ou entre em contato com sugestões e feedbacks!
+
