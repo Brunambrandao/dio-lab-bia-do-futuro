@@ -20,6 +20,14 @@ O projeto resolve a dificuldade de interpretação de dados financeiros complexo
 * **Privacidade do Usuário:** Botão exclusivo para limpeza de histórico de conversa.
 
 ---
+## 📸 Demonstração da Interface
+
+| Análise de Saldo | Filtro de Segurança | Sugestão de Investimento |
+|:---:|:---:|:---:|
+| ![Saldo](assets/atena-home.png) | ![Segurança](assets/atena-seguranca.png) | ![Investimento](assets/atena-investimento.png) |
+
+---
+
 ## 🛠️ Tecnologias e Ferramentas
 
 | Categoria | Tecnologia |
