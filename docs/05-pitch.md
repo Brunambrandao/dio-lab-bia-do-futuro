@@ -12,7 +12,7 @@ Atena, uma IA financeira via Streamlit integrada ao Google Gemini para análise 
 ### 3. Demonstração 
 > Agente funcionando
 
-No vídeo, demonstro a leitura da base transacoes.csv, o cálculo de saldo e a recusa de comandos fora do escopo (segurança).[Descreva o que será mostrado]
+No vídeo, demonstro a leitura da base transacoes.csv, o cálculo de saldo e a recusa de comandos fora do escopo (segurança).
 
 ### 4. Diferencial e Impacto 
 > Por que essa solução é inovadora e qual é o impacto dela na sociedade?
@@ -23,4 +23,4 @@ Foco em segurança de dados e linguagem didática (educação financeira).
 
 ## Link do Vídeo
 
-[https://youtu.be/qpU7QP4ae0YLink do vídeo]
+[https://youtu.be/qpU7QP4ae0Y]
