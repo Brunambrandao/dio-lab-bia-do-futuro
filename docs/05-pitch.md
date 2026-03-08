@@ -1,44 +1,26 @@
-# Pitch (3 minutos)
-
-> [!TIP]
-> Você pode usar alguns slides pra apoiar no seu Pitch e mostrar sua solução na prática.
- 
-## Roteiro Sugerido
-
-### 1. O Problema (30 seg)
+# Pitch
+### 1. O Problema
 > Qual dor do cliente você resolve?
 
-[Sua descrição aqui]
+Dificuldade em converter extratos financeiros em decisões de investimento.
 
-### 2. A Solução (1 min)
+### 2. A Solução 
 > Como seu agente resolve esse problema?
 
-[Sua descrição aqui]
+Atena, uma IA financeira via Streamlit integrada ao Google Gemini para análise preditiva e consultoria.
 
-### 3. Demonstração (1 min)
-> Mostre o agente funcionando (pode ser gravação de tela)
+### 3. Demonstração 
+> Agente funcionando
 
-[Descreva o que será mostrado]
+No vídeo, demonstro a leitura da base transacoes.csv, o cálculo de saldo e a recusa de comandos fora do escopo (segurança).
 
-### 4. Diferencial e Impacto (30 seg)
+### 4. Diferencial e Impacto 
 > Por que essa solução é inovadora e qual é o impacto dela na sociedade?
 
-[Sua descrição aqui]
-
----
-
-## Checklist do Pitch
-
-- [ ] Duração máxima de 3 minutos
-- [ ] Problema claramente definido
-- [ ] Solução demonstrada na prática
-- [ ] Diferencial explicado
-- [ ] Áudio e vídeo com boa qualidade
+Foco em segurança de dados e linguagem didática (educação financeira).
 
 ---
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
-[Link do vídeo]
+[https://youtu.be/qpU7QP4ae0Y]
