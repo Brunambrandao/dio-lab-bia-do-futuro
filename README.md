@@ -5,12 +5,13 @@ A **Atena** é uma assistente de inteligência financeira proativa, desenvolvida
 ---
 
 ## 🎯 Caso de Uso
-O projeto resolve a dificuldade de interpretação de dados financeiros complexos. A Atena atua como uma consultora consultiva que:
+O projeto resolve a dificuldade de interpretação de dados financeiros complexos. A Atena atua como uma consultora que:
 - **Antecipa necessidades:** Analisa o saldo e sugere investimentos condizentes.
 - **Personaliza sugestões:** Adapta o tom de voz e as recomendações ao perfil do cliente (João Silva).
 - **Garante Segurança:** Implementa filtros rigorosos anti-alucinação e de proteção de dados sensíveis.
 
 ---
+
 ## 🚀 Funcionalidades Principais
 
 * **Consultoria Personalizada:** Analisa o histórico e sugere produtos como CDI e FGC de forma didática.
@@ -20,6 +21,7 @@ O projeto resolve a dificuldade de interpretação de dados financeiros complexo
 * **Privacidade do Usuário:** Botão exclusivo para limpeza de histórico de conversa.
 
 ---
+
 ## 📸 Demonstração da Interface
 
 | Análise de Saldo | Filtro de Segurança | Sugestão de Investimento |
@@ -36,33 +38,32 @@ O projeto resolve a dificuldade de interpretação de dados financeiros complexo
 | **Interface** | Streamlit |
 | **Linguagem** | Python 3.10+ |
 | **Biblioteca de Dados** | Pandas |
-| **Configuração** | Python-dotenv |
+| **Segurança** | `.gitignore` (proteção de chaves API) |
 
 ---
 
-## Estrutura do Repositório
+## ⚙️ Como executar
 
-```
-📁 dio-lab-bia-do-futuro/
-│
-├── 📄 README.md                # Apresentação do projeto
-│
-├── 📁 data/                    # Base de Conhecimento
-│   ├── perfil_investidor.json  # Perfil do cliente João Silva
-│   └── transacoes.csv          # Histórico real de transações
-│
-├── 📁 docs/                    # Documentação Técnica
-│   ├── 01-documentacao-agente.md
-│   ├── 03-prompts.md           # System Prompts e Personas
-│   └── 04-metricas.md          # Relatório de Assertividade e Segurança
-│
-├── 📁 src/                     # Código Fonte
-│   ├── app.py                  # Interface Streamlit (Chat)
-│   ├── agente.py               # Lógica de processamento de dados
-│   └── requirements.txt        # Dependências do projeto
-│
-└── 📁 assets/                  # Evidências e capturas de tela
-```
+1. Clone este repositório:
+   `git clone https://github.com/Brunambrandao/dio-lab-bia-do-futuro.git`
+2. Instale as dependências:
+   `pip install -r src/requirements.txt`
+3. Configure sua chave de API do Gemini em um arquivo `.env` (não versionado).
+4. Execute a aplicação:
+   `streamlit run src/app.py`
+
+---
+
+## 📁 Estrutura do Repositório
+
+```text
+dio-lab-bia-do-futuro/
+├── assets/             # Evidências e capturas de tela
+├── data/               # Base de Conhecimento (CSV/JSON)
+├── docs/               # Documentação técnica e relatórios
+├── src/                # Código Fonte (app.py, agente.py)
+├── .gitignore          # Proteção de arquivos sensíveis (.env)
+└── README.md           # Apresentação do projeto
 
 ---
 
