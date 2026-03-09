@@ -26,7 +26,7 @@ O projeto resolve a dificuldade de interpretação de dados financeiros complexo
 
 | Análise de Saldo | Filtro de Segurança | Sugestão de Investimento |
 |:---:|:---:|:---:|
-| ![Saldo](assets/atena-home.png) | ![Segurança](assets/atena-seguranca.png) | ![Investimento](assets/atena-investimento.png) |
+| ![home](assets/atena-home.png) | ![Segurança](assets/atena-seguranca.png) | ![Investimento](assets/atena-investimento.png) |
 
 ---
 
